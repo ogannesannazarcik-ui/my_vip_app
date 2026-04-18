@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIP Кабинет</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Подключаем скрипт Телеграм -->
+    <script src="https://telegram.org"></script>
+</head>
+<body>
+<header>
+    <div class="user-info">
+        <img id="user-photo" src="https://placeholder.com" alt="Avatar">
+        <div>
+            <h2 id="user-name">Загрузка...</h2>
+            <span id="user-status">Статус: Проверка...</span>
+        </div>
+    </div>
+</header>
+
+<section class="library-grid">
+    <!-- Карточка 1 -->
+    <div class="card" onclick="openMaterial('1')">
+        <img src="https://youtube.com" class="card-thumb">
+        <div class="card-content">
+            <span class="card-type">📹 Видео</span>
+            <p class="card-title">Как настроить сервер на PythonAnywhere</p>
+        </div>
+    </div>
+
+    <!-- Карточка 2 -->
+    <div class="card" onclick="openMaterial('2')">
+        <img src="https://placeholder.com" class="card-thumb">
+        <div class="card-content">
+            <span class="card-type">📄 Документ</span>
+            <p class="card-title">Справочник по командам бота</p>
+        </div>
+    </div>
+</section>
+</body>
+</html>
