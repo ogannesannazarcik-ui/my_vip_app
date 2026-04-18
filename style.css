@@ -1,0 +1,133 @@
+:root {
+    --bg-color: var(--tg-theme-bg-color, #ffffff);
+    --text-color: var(--tg-theme-text-color, #222222);
+    --hint-color: var(--tg-theme-hint-color, #999999);
+    --button-color: var(--tg-theme-button-color, #3390ec);
+    --button-text: var(--tg-theme-button-text-color, #ffffff);
+    --secondary-bg: var(--tg-theme-secondary-bg-color, #f4f4f5);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Чтобы не было лишней прокрутки */
+}
+
+header {
+    padding: 20px;
+    background-color: var(--secondary-bg);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#user-photo {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+
+h2 { margin: 0; font-size: 18px; }
+#user-status { font-size: 14px; color: var(--hint-color); }
+
+.menu { padding: 20px; }
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.item-btn {
+    background-color: var(--secondary-bg);
+    color: var(--text-color);
+    border: 1px solid var(--button-color);
+    padding: 15px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+footer {
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#main-btn {
+    background-color: var(--button-color);
+    color: var(--button-text);
+    border: none;
+    padding: 15px 40px;
+    border-radius: 25px;
+    font-weight: bold;
+    width: 80%;
+}
+/* Контейнер для сетки карточек */
+.library-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Две карточки в ряд */
+    gap: 15px;
+    padding: 15px;
+}
+
+/* Сама карточка */
+.card {
+    background-color: var(--tg-theme-secondary-bg-color, #f4f4f5);
+    border-radius: 15px;
+    overflow: hidden; /* Чтобы картинка не вылезала за края */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+    cursor: pointer;
+}
+
+/* Эффект при нажатии */
+.card:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Обложка видео/материала */
+.card-thumb {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Соотношение сторон как у видео */
+    background-color: #000;
+    object-fit: cover;
+    display: block;
+}
+
+/* Название и описание под фото */
+.card-content {
+    padding: 10px;
+}
+
+.card-title {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--tg-theme-text-color);
+    /* Обрезка текста, если он слишком длинный */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card-type {
+    font-size: 11px;
+    color: var(--tg-theme-hint-color);
+    text-transform: uppercase;
+    margin-top: 4px;
+    display: block;
+}
